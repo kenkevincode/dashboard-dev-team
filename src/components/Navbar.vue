@@ -1,9 +1,12 @@
 <template>
   <div>
     <v-app-bar color='grey lighten-4' elevation="4">
-      <span>
-        <a :href="devTeam" :style="{textDecoration: 'none', color: 'black', fontSize: '1.5rem'}" >DevTeaM</a>
-      </span>
+       <v-toolbar-title >
+        <router-link to="/dashboard" :style="{textDecoration: 'none', color: 'black', fontSize: '1.5rem'}">DevTeaM</router-link>
+      </v-toolbar-title>
+      <!-- <span>
+        <a :href="devTeam" :style="{textDecoration: 'none', color: 'black', fontSize: '1.5rem'}">DevTeaM</a>
+      </span> -->
 
       <v-spacer></v-spacer>
 
