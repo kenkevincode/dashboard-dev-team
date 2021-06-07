@@ -12,7 +12,7 @@ export function getPeople (params) {
     credentials: 'include',
     url: `${config.api}/people`,
     headers: {
-      'X-Auth-Token': getRefreshToken()
+      // 'X-Auth-Token': getRefreshToken()
     },
     params: queryParams
   })

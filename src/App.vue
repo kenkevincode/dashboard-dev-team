@@ -7,11 +7,15 @@
 
 <script>
 import Navbar from '@/components/Navbar'
+import { init } from '@/firebase/auth'
 
 export default {
   name: 'App',
   components: {
     Navbar
+  },
+  created () {
+    init()
   }
 }
 </script>
