@@ -51,7 +51,7 @@
 
 <script>
 
-import { authorize, signUp } from '@/firebase/auth'
+import { signUp } from '@/firebase/auth'
 
 export default {
   name: 'SignUp',
@@ -73,9 +73,6 @@ export default {
     loading: false,
     error: ''
   }),
-  created () {
-    authorize()
-  },
   methods: {
     async submit () {
       if (!this.$refs.form.validate()) return

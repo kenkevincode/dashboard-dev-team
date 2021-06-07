@@ -16,13 +16,6 @@ export default {
       this.visible = flag
     }
   }
-  // mounted () {
-  //   document.onreadystatechange = () => {
-  //     if (document.readyState === 'complete') {
-  //       this.isloaded = true
-  //     }
-  //   }
-  // }
 }
 </script>
 
@@ -44,16 +37,15 @@ export default {
 .cube{
   width: 60px;
   height: 60px;
+  &:cube__t{
+    width: 28;
+  }
   &:first-child {
     animation: left 1s infinite;
   }
   &:last-child {
     animation: right 1s infinite .5s;
   }
-}
-.cube__t{
-  width: 28;
-  height: 60px;
 }
 
 @keyframes left {

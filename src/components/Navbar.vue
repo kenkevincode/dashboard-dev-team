@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { authorize, signOut } from '@/firebase/auth'
+import { signOut } from '@/firebase/auth'
 
 export default {
   name: 'Navbar',
@@ -47,9 +47,6 @@ export default {
     devTeam: 'https://dev-team.club/',
     loading: false
   }),
-  created () {
-    authorize()
-  },
   methods: {
     async logOut () {
       this.loading = true

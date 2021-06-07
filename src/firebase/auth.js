@@ -3,14 +3,17 @@ import 'firebase/firestore'
 import 'firebase/auth'
 import { firebaseConfig } from '@/firebase/config'
 
-export function authorize () {
+export function init () {
   if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig)
   }
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      console.warn('User is logged in!')
-    }
+
+  return new Promise((resolve /* , reject */) => {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        return resolve()
+      }
+    })
   })
 }
 
@@ -18,14 +21,14 @@ export function signUp (email, password) {
   return firebase.auth().createUserWithEmailAndPassword(email, password)
 }
 
-export let refreshToken = ''
-
-export async function signIn (email, password) {
-  const data = await firebase.auth().signInWithEmailAndPassword(email, password)
-  refreshToken = data.refreshToken
+export function getRefreshToken () {
+  return firebase.auth().currentUser.refreshToken
 }
 
-export async function signOut () {
-  await firebase.auth().signOut()
-  refreshToken = ''
+export function signIn (email, password) {
+  return firebase.auth().signInWithEmailAndPassword(email, password)
+}
+
+export function signOut () {
+  return firebase.auth().signOut()
 }

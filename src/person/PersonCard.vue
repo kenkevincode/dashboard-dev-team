@@ -97,7 +97,6 @@ export default {
     z-index: 1;
     right: 0;
     overflow: hidden;
-
     &__tag {
       margin: 4px 0 0 40%;
       transition: margin-left 0.5s;

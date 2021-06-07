@@ -3,6 +3,17 @@
     <v-dialog v-model='dialogVisible' width='360' class='rounded-lg'>
       <v-card height='700'
         class='ma-auto'>
+
+        <div class="edit" @click="editPersonCard">
+          <v-chip
+            class="edit__ed blue lighten-4rounded-sm"
+            label
+            text-color="white"
+          >
+          ++ edit
+        </v-chip>
+        </div>
+
         <div class="tags">
           <Tag
             v-for='tag in tags'
@@ -75,6 +86,11 @@ export default {
   data: () => ({
     dialogVisible: false
   }),
+  methods: {
+    editPersonCard () {
+      this.$emit('editPersonCard', this.personCard)
+    }
+  },
   computed: {
     tags () {
       return this.personCard.Tags
@@ -106,7 +122,6 @@ export default {
     z-index: 1;
     right: 0;
     overflow: hidden;
-
     &__tag {
       margin: 4px 0 0 40%;
       transition: margin-left 0.5s;
@@ -115,7 +130,23 @@ export default {
       }
     }
   }
-    .attention {
+  .edit{
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    overflow: hidden;
+        &__ed {
+      padding-left: 4px;
+      margin: 4px 60% 0 0;
+      transition: margin-right 0.5s;
+      &:hover {
+        margin-right: 0;
+      }
+    }
+  }
+  .attention {
     padding: 0 auto;
   }
 </style>

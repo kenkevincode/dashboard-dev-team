@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { authorize, signIn } from '@/firebase/auth'
+import { signIn } from '@/firebase/auth'
 
 export default {
   name: 'SignIn',
@@ -68,9 +68,6 @@ export default {
     showPassword: false,
     error: ''
   }),
-  created () {
-    authorize()
-  },
   methods: {
     async submit () {
       if (!this.$refs.form.validate()) return
