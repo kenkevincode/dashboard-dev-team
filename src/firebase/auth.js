@@ -7,13 +7,10 @@ export function init () {
   if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig)
   }
-
-  return new Promise((resolve /* , reject */) => {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        return resolve()
-      }
-    })
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      console.warn('User is logged in!')
+    }
   })
 }
 
