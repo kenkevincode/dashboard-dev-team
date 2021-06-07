@@ -238,7 +238,7 @@ export default {
 
       this.$emit('updatePersonCard', personCard)
 
-      // for custom photo createForm
+      // for local photo createForm
 
       // const reader = new FileReader()
       // reader.onload = () => {
