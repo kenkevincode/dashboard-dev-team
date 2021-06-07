@@ -137,7 +137,7 @@ export default {
     z-index: 1;
     left: 0;
     overflow: hidden;
-        &__ed {
+    &__ed {
       padding-left: 4px;
       margin: 4px 60% 0 0;
       transition: margin-right 0.5s;
