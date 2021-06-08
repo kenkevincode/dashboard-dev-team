@@ -38,7 +38,7 @@
           <v-layout justify-space-between>
             <div>Attention</div>
             <div>
-              {{attentionAmount}}h
+              {{ attentionAmount }}h
             </div>
           </v-layout>
           <v-row class="mt-1 mx-0 auto">
@@ -85,7 +85,7 @@ export default {
       return this.personCard.Profit
     },
     attentionAmount () {
-      return this.attention.map(a => a.Amount).reduce((acc, v) => {
+      return this.personCard.Attention.map(p => p.Amount).reduce((acc, v) => {
         acc += parseInt(v)
         return acc
       }, 0)

@@ -107,11 +107,10 @@ export default {
       return this.personCard.Profit
     },
     attentionAmount () {
-      const amount = this.attention.map(a => a.Amount).reduce((acc, v) => {
+      return this.personCard.Attention.map(p => p.Amount).reduce((acc, v) => {
         acc += parseInt(v)
         return acc
       }, 0)
-      return amount
     }
   },
   watch: {
