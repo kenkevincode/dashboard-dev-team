@@ -1,7 +1,7 @@
 <template>
   <div class="page-loader" v-if="visible">
     <div class="cube"><img class="img" src="../assets/Dev.png" alt="Dev" /></div>
-    <div class="cube__t"><img class="img" src="../assets/T.png" alt="T" /></div>
+    <div class="cube-t"><img class="img" src="../assets/T.png" alt="T" /></div>
     <div class="cube"><img class="img" src="../assets/eaM.png" alt="eaM" /></div>
   </div>
 </template>
@@ -37,7 +37,7 @@ export default {
 .cube{
   width: 60px;
   height: 60px;
-  &:cube__t{
+  &cube-t{
     width: 28;
   }
   &:first-child {

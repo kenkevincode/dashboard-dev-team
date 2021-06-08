@@ -49,7 +49,7 @@
                 v-model="tags"
                 :items="TAGS"
                 item-text="Name"
-                tags="tags"
+                tags
                 clearable
                 label="Your favorite hobbies"
                 placeholder='Write or select '
