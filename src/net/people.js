@@ -18,18 +18,6 @@ export function getPeople (params) {
   })
 }
 
-export function getPersonId () {
-  return axios({
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'include',
-    url: `${config.api}/people/{id}`,
-    headers: {
-      'X-Auth-Token': getRefreshToken()
-    }
-  })
-}
-
 export function updatePerson (id, data) {
   return axios({
     method: 'POST',

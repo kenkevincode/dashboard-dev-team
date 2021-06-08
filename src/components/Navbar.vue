@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-app-bar color='grey lighten-4' elevation="4">
-       <v-toolbar-title >
+      <v-toolbar-title >
         <router-link to="/dashboard" :style="{textDecoration: 'none', color: 'black', fontSize: '1.5rem'}">DevTeaM</router-link>
       </v-toolbar-title>
       <!-- <span>

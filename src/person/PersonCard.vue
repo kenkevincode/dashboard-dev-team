@@ -34,9 +34,14 @@
             :prof='prof' />
         </div>
 
-        <div class="attention">
-          Amount
-          <v-row class="mx-0 auto">
+        <div class="mt-2">
+          <v-layout justify-space-between>
+            <div>Attention</div>
+            <div>
+              {{attentionAmount}}h
+            </div>
+          </v-layout>
+          <v-row class="mt-1 mx-0 auto">
             <Attention
               v-for='attent in attention'
               :key='attent.idx'
@@ -78,6 +83,12 @@ export default {
     },
     profit () {
       return this.personCard.Profit
+    },
+    attentionAmount () {
+      return this.attention.map(a => a.Amount).reduce((acc, v) => {
+        acc += parseInt(v)
+        return acc
+      }, 0)
     }
   },
   methods: {
