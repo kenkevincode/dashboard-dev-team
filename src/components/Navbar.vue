@@ -27,11 +27,14 @@
       </v-btn>
 
       <v-spacer></v-spacer>
+      <!-- route to Sign Up -->
       <v-btn color='black' text @click='login'
       :loading="loading"
       >
         Log in
       </v-btn>
+
+      <!-- route to Sign In -->
       <v-btn color='black' text @click='logOut'
       :loading="loading"
       >
